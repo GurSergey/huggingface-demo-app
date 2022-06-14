@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!--  user1  test-->
+    <!--  user1  test-->
     <meta charset="UTF-8">
     <title>DataMarkup</title>
 
@@ -18,82 +18,83 @@
     <script defer>
         let popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
         let popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-          return new bootstrap.Popover(popoverTriggerEl)
+            return new bootstrap.Popover(popoverTriggerEl)
         })
 
         let collapseElementList = [].slice.call(document.querySelectorAll('.collapse'))
         let collapseList = collapseElementList.map(function (collapseEl) {
-          return new bootstrap.Collapse(collapseEl)
+            return new bootstrap.Collapse(collapseEl)
         })
     </script>
 </head>
 <body>
 
 <!--HEADER-->
-<nav class="navbar navbar-expand-lg navbar-light" >
-<div class="container-fluid">
-    <img src="inventor.png" class="float-start" alt="icon" style="width: 75px; height: 75px; margin: 20px;">
-    <a class="navbar-brand " href="#">Inventor - Demo</a>
-    <span></span>
-</div>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+        <img src="huggingface_logo.svg" class="float-start" alt="icon" style="width: 75px; height: 75px; margin: 20px;">
+        <img src="haulmont_logo.png" class="float-start" alt="icon" style=" height: 50px; margin: 20px;">
+        <a class="navbar-brand " href="#">HuggingFace - Haulmont Demo</a>
+        <span></span>
+    </div>
 </nav>
 
-<div class="card-group">
-    <div class="card " >
-        <h5 class="card-title">Форма ввода</h5>
-        <div>
-            <label for="industries-text" >Отрасль промышленности:</label>
-            <textarea class="form-control" id="industries-text" rows="2"></textarea>
-        </div>
-        <div>
-            <label for="target-text" >Цель технического решения:</label>
-            <textarea class="form-control" id="target-text" rows="2"></textarea>
-        </div>
-        <div>
-            <label for="current-text" >Описание существующей технической системы (прототипа изобретения):</label>
-            <textarea class="form-control" id="current-text" rows="2"></textarea>
-        </div>
-        <div>
-            <label for="faults-text" >Недостатки существующей технической системы:</label>
-            <textarea class="form-control" id="faults-text" rows="2"></textarea>
-        </div>
-        <div>
-            <label for="ml-model">Используемая модель:</label>
-            <select class="form-select" id="ml-model" aria-label="Default select example">
-                <option value="t5base">T5-Base</option>
-                <option value="t5large">T5-Large (Not Realized)</option>
-            </select>
-        </div>
-        <button type="button" class="btn btn-primary" id="generate-button" >
-            <span class="status-active">Сгенерировать ответ</span>
-            <span class="status-generate spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-            <span class="status-generate">Идет генерация ответа</span>
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <button class="nav-link active" id="nav-classification" data-bs-toggle="tab" data-bs-target="#classification"
+                type="button" role="tab" aria-controls="classification" aria-selected="true">Classification
         </button>
-        <button type="button" id="clear-button" class="btn btn-secondary">Отчистить ввод</button>
+        <button class="nav-link" id="nav-ner" data-bs-toggle="tab" data-bs-target="#ner"
+                type="button" role="tab" aria-controls="ner" aria-selected="false">NER
+        </button>
+        <button class="nav-link" id="nav-similarity" data-bs-toggle="tab" data-bs-target="#similarity"
+                type="button" role="tab" aria-controls="similarity" aria-selected="false">Sentence Similarity
+        </button>
+        <button class="nav-link" id="nav-qa" data-bs-toggle="tab" data-bs-target="#qa"
+                type="button" role="tab" aria-controls="qa" aria-selected="false">Question Answering
+        </button>
+        <button class="nav-link" id="nav-generation" data-bs-toggle="tab" data-bs-target="#generation"
+                type="button" role="tab" aria-controls="generation" aria-selected="false">Generation
+        </button>
+        <button class="nav-link" id="nav-seq2seq" data-bs-toggle="tab" data-bs-target="#seq2seq"
+                type="button" role="tab" aria-controls="seq2seq" aria-selected="false">Seq2Seq
+        </button>
+        <button class="nav-link" id="nav-translation" data-bs-toggle="tab" data-bs-target="#translation"
+                type="button" role="tab" aria-controls="translation" aria-selected="false">Translation
+        </button>
+        <button class="nav-link" id="nav-summarization" data-bs-toggle="tab" data-bs-target="#summarization"
+                type="button" role="tab" aria-controls="summarization" aria-selected="false">Summarization
+        </button>
+        <button class="nav-link" id="nav-qa-closed-book" data-bs-toggle="tab" data-bs-target="#qa-closed-book"
+                type="button" role="tab" aria-controls="qa-closed-book" aria-selected="false">Question Answering Closed Book
+        </button>
+
     </div>
-    <div class="card " >
-        <h5 class="card-title">Инструкция по эксплуатации:</h5>
-        <hr>
-        <h5>Решения: </h5>
-        <p id="button-p"></p>
-        <div id="answer-div"></div>
-
-
-        <template id="button-collapse-template">
-          <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapse">
-            Решение
-          </a>
-        </template>
-        <template id="card-template">
-            <div class="collapse" id="collapseExample">
-                <h6 class="header-solve">Решение </h6>
-              <div class="card card-body">
-
-              </div>
-            </div>
-        </template>
+</nav>
+<div class="tab-content" id="nav-tabContent" style="margin: 10px;">
+    <div class="tab-pane fade show active" id="classification" role="tabpanel" aria-labelledby="nav-classification">
+        <div class="input-group mb-3">
+          <span class="input-group-text model">Model</span>
+          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Input</span>
+          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <span class="answer"></span>
+        <button type="button" class="btn btn-primary">Get Answer</button>
     </div>
+
+    <div class="tab-pane fade" id="ner" role="tabpanel" aria-labelledby="nav-ner">ner</div>
+    <div class="tab-pane fade" id="similarity" role="tabpanel" aria-labelledby="nav-similarity">similarity</div>
+    <div class="tab-pane fade" id="qa" role="tabpanel" aria-labelledby="nav-qa">qa</div>
+    <div class="tab-pane fade" id="generation" role="tabpanel" aria-labelledby="nav-generation">generation</div>
+    <div class="tab-pane fade" id="seq2seq" role="tabpanel" aria-labelledby="nav-seq2seq">seq2seq</div>
+    <div class="tab-pane fade" id="translation" role="tabpanel" aria-labelledby="nav-translation">translation</div>
+    <div class="tab-pane fade" id="summarization" role="tabpanel" aria-labelledby="nav-summarization">summarization</div>
+    <div class="tab-pane fade" id="qa-closed-book" role="tabpanel" aria-labelledby="nav-qa-closed-book">qa-closed-book</div>
 </div>
+
 
 </body>
 </html>
