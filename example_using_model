@@ -2,16 +2,19 @@ Text classification
 cls_pl = pipeline("text-classification", mode)
 cls_pl(text)
 
+Babelscape/wikineural-multilingual-ner
 ner_pipeline = pipeline("ner", "dslim/bert-base-NER", aggregation_strategy="first")
 ner_pipeline("Matthew Carrigan is a Machine Learning Engineer at Hugging Face. He lives in Dublin, Ireland and previously worked as an ML engineer at Parse.ly and before that as a post-doctoral researcher at Trinity College Dublin.")
 
+
+symanto/sn-xlm-roberta-base-snli-mnli-anli-xnli
 from sentence_transformers import SentenceTransformer
 sentences = ["This is an example sentence", "Each sentence is converted"]
 model = SentenceTransformer('sentence-transformers/bert-base-nli-mean-tokens')
 embeddings = model.encode(sentences)
 print(embeddings)
 
-
+AlexKay/xlm-roberta-large-qa-multilingual-finedtuned-ru
 qa = pipeline("question-answering", "deepset/roberta-base-squad2")
 question = ""
 context = ""

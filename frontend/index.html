@@ -75,24 +75,159 @@
     <div class="tab-pane fade show active" id="classification" role="tabpanel" aria-labelledby="nav-classification">
         <div class="input-group mb-3">
           <span class="input-group-text model">Model</span>
-          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <input type="text" class="form-control model-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
         <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Input</span>
-          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <span class="input-group-text">Input</span>
+          <input type="text" class="form-control text-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
         <span class="answer"></span>
         <button type="button" class="btn btn-primary">Get Answer</button>
+        <pre class="output"></pre>
+
     </div>
 
-    <div class="tab-pane fade" id="ner" role="tabpanel" aria-labelledby="nav-ner">ner</div>
-    <div class="tab-pane fade" id="similarity" role="tabpanel" aria-labelledby="nav-similarity">similarity</div>
-    <div class="tab-pane fade" id="qa" role="tabpanel" aria-labelledby="nav-qa">qa</div>
-    <div class="tab-pane fade" id="generation" role="tabpanel" aria-labelledby="nav-generation">generation</div>
-    <div class="tab-pane fade" id="seq2seq" role="tabpanel" aria-labelledby="nav-seq2seq">seq2seq</div>
-    <div class="tab-pane fade" id="translation" role="tabpanel" aria-labelledby="nav-translation">translation</div>
-    <div class="tab-pane fade" id="summarization" role="tabpanel" aria-labelledby="nav-summarization">summarization</div>
-    <div class="tab-pane fade" id="qa-closed-book" role="tabpanel" aria-labelledby="nav-qa-closed-book">qa-closed-book</div>
+    <div class="tab-pane fade" id="ner" role="tabpanel" aria-labelledby="nav-ner">
+
+        <div class="input-group mb-3">
+          <span class="input-group-text model">Model</span>
+          <input type="text" class="form-control model-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Input</span>
+          <input type="text" class="form-control text-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <button type="button" class="btn btn-primary">Get Answer</button>
+        <pre class="output"></pre>
+
+    </div>
+    <div class="tab-pane fade" id="similarity" role="tabpanel" aria-labelledby="nav-similarity">
+
+        <div class="input-group mb-3">
+          <span class="input-group-text model">Model</span>
+          <input type="text" class="form-control model-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Target sentence:</span>
+          <input type="text" class="form-control text-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Similar 1:</span>
+          <input type="text" class="form-control text-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Similar 2:</span>
+          <input type="text" class="form-control text-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Similar 3:</span>
+          <input type="text" class="form-control text-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <button type="button" class="btn btn-primary">Get Answer</button>
+        <pre class="output"></pre>
+
+    </div>
+    <div class="tab-pane fade" id="qa" role="tabpanel" aria-labelledby="nav-qa">
+
+        <div class="input-group mb-3">
+          <span class="input-group-text model">Model</span>
+          <input type="text" class="form-control model-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Question:</span>
+          <input type="text" class="form-control question-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Context:</span>
+          <input type="text" class="form-control context-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <button type="button" class="btn btn-primary">Get Answer</button>
+        <pre class="output"></pre>
+
+    </div>
+    <div class="tab-pane fade" id="generation" role="tabpanel" aria-labelledby="nav-generation">
+
+        <div class="input-group mb-3">
+          <span class="input-group-text model">Model</span>
+          <input type="text" class="form-control model-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Input</span>
+          <input type="text" class="form-control text-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <button type="button" class="btn btn-primary">Get Answer</button>
+        <pre class="output"></pre>
+
+    </div>
+    <div class="tab-pane fade" id="seq2seq" role="tabpanel" aria-labelledby="nav-seq2seq">
+
+        <div class="input-group mb-3">
+          <span class="input-group-text model">Model</span>
+          <input type="text" class="form-control model-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Input</span>
+          <input type="text" class="form-control text-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <button type="button" class="btn btn-primary">Get Answer</button>
+        <pre class="output"></pre>
+
+    </div>
+    <div class="tab-pane fade" id="translation" role="tabpanel" aria-labelledby="nav-translation">
+        <div class="input-group mb-3">
+          <span class="input-group-text model">Model</span>
+          <input type="text" class="form-control model-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="from-lang">From lang:</label>
+          <select class="form-select" id="from-lang">
+            <option value="ru">Ru</option>
+            <option value="en">Eng</option>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="to-lang">To lang:</label>
+          <select class="form-select" id="to-lang">
+            <option value="en" selected>Eng</option>
+            <option value="ru">Ru</option>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Input</span>
+          <input type="text" class="form-control text-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <button type="button" class="btn btn-primary">Get Answer</button>
+        <pre class="output"></pre>
+
+    </div>
+    <div class="tab-pane fade" id="summarization" role="tabpanel" aria-labelledby="nav-summarization">
+
+        <div class="input-group mb-3">
+          <span class="input-group-text model">Model</span>
+          <input type="text" class="form-control model-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Input</span>
+          <input type="text" class="form-control text-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <button type="button" class="btn btn-primary">Get Answer</button>
+        <pre class="output"></pre>
+
+    </div>
+    <div class="tab-pane fade" id="qa-closed-book" role="tabpanel" aria-labelledby="nav-qa-closed-book">
+
+        <div class="input-group mb-3">
+          <span class="input-group-text model">Model</span>
+          <input type="text" class="form-control model-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Input</span>
+          <input type="text" class="form-control text-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <button type="button" class="btn btn-primary">Get Answer</button>
+        <pre class="output"></pre>
+
+    </div>
 </div>
 
 
