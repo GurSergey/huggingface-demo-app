@@ -14,6 +14,15 @@ Array.from(buttons).forEach(button => {
                "text": document.querySelector(".active input.text-input").value
             }
             break;
+        case "nav-zero-shot":
+            url = "api/zero-shot-classification"
+            values = {
+                "model": document.querySelector(".active input.model-input").value,
+                "text": document.querySelector(".active input.text-input").value,
+                "labels": document.querySelector(".active input.labels-input").value
+            }
+            break;
+
         case "nav-ner":
             url = "api/ner"
             values = {

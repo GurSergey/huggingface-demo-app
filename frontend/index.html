@@ -44,6 +44,9 @@
         <button class="nav-link active" id="nav-classification" data-bs-toggle="tab" data-bs-target="#classification"
                 type="button" role="tab" aria-controls="classification" aria-selected="true">Classification
         </button>
+        <button class="nav-link" id="nav-zero-shot" data-bs-toggle="tab" data-bs-target="#zero-shot"
+                type="button" role="tab" aria-controls="zero-shot" aria-selected="true">ZeroShot
+        </button>
         <button class="nav-link" id="nav-ner" data-bs-toggle="tab" data-bs-target="#ner"
                 type="button" role="tab" aria-controls="ner" aria-selected="false">NER
         </button>
@@ -84,7 +87,24 @@
         <span class="answer"></span>
         <button type="button" class="btn btn-primary">Get Answer</button>
         <pre class="output"></pre>
+    </div>
 
+    <div class="tab-pane fade" id="zero-shot" role="tabpanel" aria-labelledby="nav-zero-shot">
+        <div class="input-group mb-3">
+          <span class="input-group-text model">Model:</span>
+          <input type="text" class="form-control model-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Input:</span>
+          <input type="text" class="form-control text-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Labels:</span>
+          <input type="text" class="form-control labels-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <span class="answer"></span>
+        <button type="button" class="btn btn-primary">Get Answer</button>
+        <pre class="output"></pre>
     </div>
 
     <div class="tab-pane fade" id="ner" role="tabpanel" aria-labelledby="nav-ner">

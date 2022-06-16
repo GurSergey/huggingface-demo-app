@@ -64,6 +64,21 @@ def get_answer():
     return json.dumps(ppl(text))
 
 
+@app.route("/zero-shot-classification", methods=['POST'])
+def zero_shot_classification():
+    request_data = request.json
+    model_name, text, labels = \
+        request_data['model'], \
+        request_data['text'], \
+        request_data['labels']
+    if cache.contains("zero-shot-classification", model_name):
+        ppl = cache.get("zero-shot-classification", model_name)
+    else:
+        ppl = pipeline("zero-shot-classification", model_name)
+        cache.put("zero-shot-classification", model_name, ppl)
+    return json.dumps(ppl(text, labels))
+
+
 @app.route('/ner', methods=['POST'])
 def get_ner():
     request_data = request.json
